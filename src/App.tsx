@@ -1,5 +1,5 @@
 // App.js or App.tsx
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import LoginForm from './components/loginForm';
 import Dashboard from './components/dashboard/dashboard.tsx';
 import Home from './components/home';
@@ -17,7 +17,7 @@ import OrderView from "./components/view-orders/OrderView.tsx";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/*" element={<Layout />}>
@@ -35,7 +35,7 @@ function App() {
           <Route path='orderView' element={<OrderView />}/>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
