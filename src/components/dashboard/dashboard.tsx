@@ -6,6 +6,11 @@ import axios from "axios";
 import html2canvas from "html2canvas";
 import {jsPDF} from "jspdf";
 import logo from '../../../public/assets/images/logo.png';
+import dailyCost from '../../../public/assets/icons/daily cost.svg';
+import icon1 from '../../../public/assets/icons/Icon 1.svg';
+import icon2 from '../../../public/assets/icons/Icon 2.svg';
+import icon3 from '../../../public/assets/icons/Icon 3.svg';
+import icon4 from '../../../public/assets/icons/Icon 4.svg';
 import { useNavigate } from 'react-router-dom';
 
 interface StockData {
@@ -412,7 +417,7 @@ const hanldeDailyCostOnClick=()=>{
 
 
           <button className='daily_cost-buttons-styles p-1 rounded-xl w-full sm:w-auto flex items-center' onClick={hanldeDailyCostOnClick}>
-            Daily Cost<img src={'src/assets/icons/daily cost.svg'} className='ml-2' alt='icon' />
+            Daily Cost<img src={dailyCost} className='ml-2' alt='icon' />
           </button>
         </div>
 
@@ -427,7 +432,7 @@ const hanldeDailyCostOnClick=()=>{
 
             <div className='custom-div w-[12vw] bg-gray-800 p-4 rounded-lg text-center'>
               <div className='mb-2'>
-                <img src={'src/assets/icons/Icon 1.svg'} alt='icon' className='mx-auto' />
+                <img src={icon1} alt='icon' className='mx-auto' />
               </div>
               <div className='text-2xl'>{totalIncomeMonth}</div>
               <div className='text-sm'>Total Sales</div>
@@ -437,7 +442,7 @@ const hanldeDailyCostOnClick=()=>{
 
             <div className='custom-div w-[12vw] bg-gray-800 p-4 rounded-lg text-center'>
               <div className='mb-2'>
-                <img src={'src/assets/icons/Icon 2.svg'} alt='icon' className='mx-auto' />
+                <img src={icon2} alt='icon' className='mx-auto' />
               </div>
               <div className='text-2xl'>{orderCount}</div>
               <div className='text-sm'>Retail Orders</div>
@@ -448,7 +453,7 @@ const hanldeDailyCostOnClick=()=>{
 
             <div className='custom-div w-[12vw] bg-gray-800 p-4 rounded-lg text-center'>
               <div className='mb-2'>
-                <img src={'src/assets/icons/Icon 3.svg'} alt='icon' className='mx-auto' />
+                <img src={icon3} alt='icon' className='mx-auto' />
               </div>
               <div className='text-2xl'>{orderCountWholesale}</div> {/* Display the number */}
               <div className='text-sm'>Wholesale Orders</div>
@@ -457,7 +462,7 @@ const hanldeDailyCostOnClick=()=>{
 
             <div className='custom-div w-[12vw] bg-gray-800 p-4 rounded-lg text-center'>
               <div className='mb-2'>
-                <img src={'src/assets/icons/Icon 4.svg'} alt='icon' className='w-fit mx-auto' />
+                <img src={icon4} alt='icon' className='w-fit mx-auto' />
               </div>
               <div className='text-2xl'>{soldCount}</div>
               <div className='text-sm'>Retail Phone Sold</div>

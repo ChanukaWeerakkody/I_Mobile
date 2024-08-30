@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import TopNavbar from '../topNavbar';
 import Combobox from '../combobox/combobox';
@@ -6,6 +5,9 @@ import Button from '../crudbuttons/buttons';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { backend_url } from '../../utill/utill';
+import addButton from '../../../public/assets/icons/Add Btn.svg';
+import updateButton from '../../../public/assets/icons/Update Btn.svg';
+import deleteButton from '../../../public/assets/icons/Delete Btn.svg';
 
 // Define the Phone type
 interface Phone {
@@ -99,7 +101,7 @@ export default function StockPhones() {
         description: /^[a-zA-Z0-9\s]+$/,
         quantity: /^\d+$/, 
         model: /^[a-zA-Z0-9\s]+$/, 
-        imeiNumber: /^\d{15}$/, 
+        imeiNumber: /^\d{15}$/,
         storage: /^(64GB|128GB|256GB|512GB|1TB)$/,
         iosversion: /^\d+$/,
         batteryHealth: /^\d+$/,
@@ -365,9 +367,6 @@ export default function StockPhones() {
             Swal.fire('Error', 'An error occurred while updating the phone', 'error');
         }
     };
-    
-    
-    
 
     const handleItemDeleteOnClick = async (phoneId: number) => {
         if (!selectedPhone) return;
@@ -449,10 +448,6 @@ export default function StockPhones() {
             setBatteryHealth(imeiData.batteryHealth);
         }
     };
-
-
-
-
 
     return (
         <div className='m-4 w-full'>
@@ -578,7 +573,7 @@ export default function StockPhones() {
             <Button
                 onClick={handleAddPhone}
                 className='buttons-styles bg-green-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                iconSrc={'src/assets/icons/Add Btn.svg'}
+                iconSrc={addButton}
                 iconAlt='add icon'
             >
                 ADD
@@ -586,7 +581,7 @@ export default function StockPhones() {
             <Button
                 onClick={() => handleItemDeleteOnClick(selectedPhone?.id || 0)}
                 className='buttons-styles bg-red-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                iconSrc={'src/assets/icons/Delete Btn.svg'}
+                iconSrc={deleteButton}
                 iconAlt='delete icon'
             >
                 DELETE
@@ -594,7 +589,7 @@ export default function StockPhones() {
             <Button
                 onClick={handleItemUpdateOnClick}
                 className='buttons-styles bg-blue-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                iconSrc={'src/assets/icons/Update Btn.svg'}
+                iconSrc={updateButton}
                 iconAlt='update icon'
             >
                 UPDATE
@@ -602,7 +597,7 @@ export default function StockPhones() {
             <Button
                 onClick={handlePushOnClick}
                 className={`buttons-styles bg-green-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center ${isPushDisabled ? 'hidden' : ''}`}
-                iconSrc={'src/assets/icons/Add Btn.svg'}
+                iconSrc={addButton}
                 iconAlt='add icon'
             >
                 PUSH

@@ -4,6 +4,9 @@ import '../item/item.css'; // Ensure this file does not override Tailwind classe
 import axios from 'axios';
 import { backend_url } from '../../utill/utill';
 import Swal from "sweetalert2";
+import addButton from '../../../public/assets/icons/Add Btn.svg';
+import updateButton from '../../../public/assets/icons/Update Btn.svg';
+import deleteButton from '../../../public/assets/icons/Delete Btn.svg';
 
 interface ItemData {
     category: string;
@@ -333,11 +336,11 @@ const Item = () => {
 
                 <div className='flex  mt-5'>
                 <button onClick={handleItemAddOnClick} className='mr-[6vw] buttons-styles bg-green-button w-[7vw] h-[5vh] text-center rounded-xl flex justify-center items-center'>
-                    <img src={'src/assets/icons/Add Btn.svg'} className='mr-[0.3vw]' alt='add icon' />ADD</button>
+                    <img src={addButton} className='mr-[0.3vw]' alt='add icon' />ADD</button>
                 <button onClick={handleItemDeleteOnClick} className='mr-[6vw] buttons-styles bg-red-button w-[8vw] h-[5vh] text-center rounded-xl flex justify-center items-center'>
-                    <img src={'src/assets/icons/Delete Btn.svg'} className='mr-[0.3vw]' alt='delete icon' />DELETE</button>
+                    <img src={deleteButton} className='mr-[0.3vw]' alt='delete icon' />DELETE</button>
                 <button onClick={handleItemUpdateOnClick} className='buttons-styles bg-blue-button w-[8vw] h-[5vh] text-center rounded-xl flex justify-center items-center'>
-                    <img src={'src/assets/icons/Update Btn.svg'} className='mr-[0.3vw]' alt='update icon' />UPDATE</button>
+                    <img src={updateButton} className='mr-[0.3vw]' alt='update icon' />UPDATE</button>
             </div>
             </div>
             

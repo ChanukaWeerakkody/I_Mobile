@@ -5,6 +5,9 @@ import axios from "axios";
 import { backend_url } from "../../utill/utill.ts";
 import Swal from "sweetalert2";
 import Combobox from '../combobox/combobox.tsx';
+import addButton from '../../../public/assets/icons/Add Btn.svg';
+import updateButton from '../../../public/assets/icons/Update Btn.svg';
+import deleteButton from '../../../public/assets/icons/Delete Btn.svg';
 
 const brandOptions = [
     { value: 'Samsung', label: 'Samsung' },
@@ -313,7 +316,7 @@ export default function ReturnItem() {
                 <Button
                     onClick={handleAddReturnItem}
                     className='buttons-styles bg-green-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                    iconSrc={'src/assets/icons/Add Btn.svg'}
+                    iconSrc={addButton}
                     iconAlt='add icon'
                 >
                     ADD
@@ -321,7 +324,7 @@ export default function ReturnItem() {
                 <Button
                     onClick={handleItemDeleteOnClick}
                     className='buttons-styles bg-red-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                    iconSrc={'src/assets/icons/Delete Btn.svg'}
+                    iconSrc={deleteButton}
                     iconAlt='delete icon'
                 >
                     DELETE
@@ -329,7 +332,7 @@ export default function ReturnItem() {
                 <Button
                     onClick={handleItemUpdateOnClick}
                     className='buttons-styles bg-blue-button w-full sm:w-[20%] md:w-[15%] lg:w-[15%] xl:w-[10vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                    iconSrc={'src/assets/icons/Update Btn.svg'}
+                    iconSrc={updateButton}
                     iconAlt='update icon'
                 >
                     UPDATE

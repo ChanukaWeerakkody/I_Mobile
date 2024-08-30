@@ -5,6 +5,12 @@ import Swal from 'sweetalert2';
 import logo from '../../../../public/assets/images/logo.png';
 import layer1 from '../../../../public/assets/images/navbar/layer1.svg';
 import stockPhone from '../../../../public/assets/images/navbar/Stock Phones.svg';
+import returnPhone from '../../../../public/assets/images/navbar/Return Phones.svg';
+import items from '../../../../public/assets/images/navbar/Items.svg';
+import returnItem from '../../../../public/assets/images/navbar/Return item.svg';
+import users from '../../../../public/assets/images/navbar/Users.svg';
+import shops from '../../../../public/assets/images/navbar/Shops.svg';
+import cart from '../../../../public/assets/images/navbar/cart-svgrepo-com 1.svg';
 
 // Authentication check function
 const isAuthenticated = () => {
@@ -63,7 +69,7 @@ function NavigationMenu() {
                             onClick={() => handleNavigation('/StockPhones')}
                         />
                         <NavItems
-                            logo='src/assets/images/navbar/Return Phones.svg'
+                            logo={returnPhone}
                             name='Return Phones'
                             location='/returnPhone'
                             selected={selectedItem}
@@ -71,7 +77,7 @@ function NavigationMenu() {
                             onClick={() => handleNavigation('/returnPhone')}
                         />
                         <NavItems
-                            logo='src/assets/images/navbar/Items.svg'
+                            logo={items}
                             name='Items'
                             location='/item'
                             selected={selectedItem}
@@ -79,7 +85,7 @@ function NavigationMenu() {
                             onClick={() => handleNavigation('/item')}
                         />
                         <NavItems
-                            logo='src/assets/images/navbar/Return item.svg'
+                            logo={returnItem}
                             name='Return Items'
                             location='/returnItem'
                             selected={selectedItem}
@@ -87,7 +93,7 @@ function NavigationMenu() {
                             onClick={() => handleNavigation('/returnItem')}
                         />
                         <NavItems
-                            logo='src/assets/images/navbar/Users.svg'
+                            logo={users}
                             name='Users'
                             location='/user'
                             selected={selectedItem}
@@ -95,7 +101,7 @@ function NavigationMenu() {
                             onClick={() => handleNavigation('/user')}
                         />
                         <NavItems
-                            logo='src/assets/images/navbar/Shops.svg'
+                            logo={shops}
                             name='Shops'
                             location='/shop'
                             selected={selectedItem}
@@ -110,7 +116,7 @@ function NavigationMenu() {
                         to="/order"
                         className="mt-5 flex text-[25px] w-full justify-center rounded-md bg-[#5356EC] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 items-center gap-3"
                     >
-                        <img src="../../../../public/assets/images/navbar/cart-svgrepo-com 1.svg" alt="cart" />
+                        <img src={cart} alt="cart" />
                         Place Order
                     </NavLink>
                 </div>

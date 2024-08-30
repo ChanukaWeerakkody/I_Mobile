@@ -4,6 +4,9 @@ import Button from '../crudbuttons/buttons';
 import Swal from "sweetalert2";
 import axios from 'axios';
 import { backend_url } from '../../utill/utill';
+import addButton from '../../../public/assets/icons/Add Btn.svg';
+import updateButton from '../../../public/assets/icons/Update Btn.svg';
+import deleteButton from '../../../public/assets/icons/Delete Btn.svg';
 
 interface UserData {
     user_id: number;
@@ -360,7 +363,7 @@ const User: React.FC = () => {
                 <Button
                     onClick={() => handleAddUser()}
                     className='mr-[6vw] buttons-styles bg-green-button w-[7vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                    iconSrc={'src/assets/icons/Add Btn.svg'}
+                    iconSrc={addButton}
                     iconAlt='add icon'
                 >
                     ADD
@@ -368,7 +371,7 @@ const User: React.FC = () => {
                 <Button
                     onClick={() => handleItemDeleteOnClick(selectedUser?.user_id || 0)}
                     className='mr-[6vw] buttons-styles bg-red-button w-[8vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                    iconSrc={'src/assets/icons/Delete Btn.svg'}
+                    iconSrc={deleteButton}
                     iconAlt='delete icon'
                 >
                     DELETE
@@ -376,7 +379,7 @@ const User: React.FC = () => {
                 <Button
                     onClick={() => handleItemUpdateOnClick()}
                     className='buttons-styles bg-blue-button w-[8vw] h-[5vh] text-center rounded-xl flex justify-center items-center'
-                    iconSrc={'src/assets/icons/Update Btn.svg'}
+                    iconSrc={updateButton}
                     iconAlt='update icon'
                 >
                     UPDATE
