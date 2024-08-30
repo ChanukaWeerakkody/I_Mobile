@@ -184,7 +184,7 @@ export default function RetailOrder(prop: IProp) {
 
     const [items, setItems] = React.useState<Item[]>([]);
 
-    const handleFetchItemData = async () => {
+   /* const handleFetchItemData = async () => {
         try {
             const response = await axios.get(`http://localhost:8080/api/items/search/${itemData.name}`);
             if (response.data.status === 200 && response.data.data.length > 0) {
@@ -215,11 +215,95 @@ export default function RetailOrder(prop: IProp) {
         } catch (error) {
             console.error('Error fetching item data:', error);
         }
+    };*/
+
+
+    /*const handleKeyPress = (event:any) => {
+        if (event.key === 'Enter') {
+            handleFetchItemData();
+        }
+    };*/
+    const [searchResults, setSearchResults] = useState([]);
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const handleSearch = async (namePart:any) => {
+        try {
+            const response = await axios.get(`http://localhost:8080/api/items/search/${namePart}`);
+            if (response.data.status === 200) {
+                setSearchResults(response.data.data);
+                setShowDropdown(true);
+            }
+        } catch (error) {
+            console.error('Error searching items:', error);
+        }
+    };
+
+    const handleSelectItem = async (selectedItem:any) => {
+        setItemData({
+            item_id: selectedItem.item_id,
+            category: selectedItem.category,
+            brand: selectedItem.brand,
+            name: selectedItem.name,
+            colour: selectedItem.colour,
+            warranty_period: selectedItem.warranty_period,
+            qty: selectedItem.qty,
+            price: selectedItem.price
+        });
+        setShowDropdown(false); // Hide the dropdown after selection
+    };
+
+    const handleInputChange = (ev:any) => {
+        const namePart = ev.target.value;
+        setItemData({...itemData, name: namePart});
+        if (namePart.length > 2) { // Start searching after 3 characters
+            handleSearch(namePart);
+        } else {
+            setShowDropdown(false); // Hide the dropdown if the input is cleared or too short
+        }
     };
 
     const handleKeyPress = (event:any) => {
         if (event.key === 'Enter') {
-            handleFetchItemData();
+            if (searchResults.length > 0 && showDropdown) {
+                // If Enter is pressed and there are search results, select the first one
+                handleSelectItem(searchResults[0]);
+            } else {
+                // Otherwise, fetch the item data for the current name
+                handleFetchItemData();
+            }
+        }
+    };
+
+    const handleFetchItemData = async () => {
+        try {
+            const response = await axios.get(`http://localhost:8080/api/items/search/${itemData.name}`);
+            if (response.data.status === 200 && response.data.data.length > 0) {
+                const item = response.data.data[0];
+                setItemData({
+                    item_id: item.item_id,
+                    category: item.category,
+                    brand: item.brand,
+                    name: item.name,
+                    colour: item.colour,
+                    warranty_period: item.warranty_period,
+                    qty: item.qty,
+                    price: item.price
+                });
+            } else {
+                setItemData({
+                    item_id: '',
+                    category: '',
+                    brand: '',
+                    name: '',
+                    colour: '',
+                    warranty_period: '',
+                    qty: '',
+                    price: ''
+                });
+                alert('No items found');
+            }
+        } catch (error) {
+            console.error('Error fetching item data:', error);
         }
     };
 
@@ -518,13 +602,34 @@ export default function RetailOrder(prop: IProp) {
                                 Add Item
                             </Typography>
                             <div className='w-full flex flex-col mt-2'>
-                                <input
+                                {/*<input
                                     className='text-feild mb-4 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1'
                                     value={itemData.name}
                                     onChange={(ev) => setItemData({...itemData, name: ev.target.value})}
                                     onKeyDown={handleKeyPress}
                                     placeholder='Item Name'
+                                />*/}
+                                <input
+                                    className='text-feild  mb-4 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1'
+                                    value={itemData.name}
+                                    onChange={handleInputChange}
+                                    onKeyDown={handleKeyPress}
+                                    placeholder='Item Name'
+                                    autoComplete="off"
                                 />
+                                {showDropdown && searchResults.length > 0 && (
+                                    <ul className="absolute bg-white border border-gray-300 w-full mt-1 z-10">
+                                        {searchResults.map((item) => (
+                                            <li
+                                                key={item.item_id}
+                                                className="p-2 cursor-pointer text-black hover:bg-gray-200"
+                                                onClick={() => handleSelectItem(item)}
+                                            >
+                                                {item.name}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                                 <div className='flex'>
                                     <input
                                         className='text-feild mb-4 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1'
