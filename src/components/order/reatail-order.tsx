@@ -619,7 +619,7 @@ export default function RetailOrder(prop: IProp) {
                                 />
                                 {showDropdown && searchResults.length > 0 && (
                                     <ul className="absolute bg-white border border-gray-300 w-full mt-1 z-10">
-                                        {searchResults.map((item) => (
+                                        {searchResults.map((item:any) => (
                                             <li
                                                 key={item.item_id}
                                                 className="p-2 cursor-pointer text-black hover:bg-gray-200"
