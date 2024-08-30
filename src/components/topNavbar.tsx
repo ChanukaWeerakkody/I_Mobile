@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import logout from "../../public/assets/icons/Logout.svg";
 
 export default function TopNavbar(): JSX.Element {
   const [token, setToken] = useState<string>('');
@@ -63,7 +64,7 @@ export default function TopNavbar(): JSX.Element {
               onClick={logoutFunction}
               className='input-bg-gradient-custom p-2 bg-blue-500 rounded-full text-white'
           >
-            <img src={'src/assets/icons/Logout.svg'} className='w-fit h-[3vh]' alt="Logout Icon"/>
+            <img src={logout} className='w-fit h-[3vh]' alt="Logout Icon"/>
           </button>
         </div>
       </div>

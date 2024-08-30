@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import Swal from 'sweetalert2';
+import logo from '../../../../public/assets/images/logo.png';
+import layer1 from '../../../../public/assets/images/navbar/layer1.svg';
+import stockPhone from '../../../../public/assets/images/navbar/Stock Phones.svg';
 
 // Authentication check function
 const isAuthenticated = () => {
@@ -38,13 +41,13 @@ function NavigationMenu() {
     return (
         <nav className="fixed top-8 left-0 pt-3 flex flex-col min-w-[270px] w-[270px] h-[95%] bg-[#1D1D27] rounded-r-[40px] items-center overflow-hidden">
             <div className='mt-2 self-start pl-8'>
-                <img width="120px" src="../../../../public/assets/images/logo.png" alt="company logo" />
+                <img width="120px" src={logo} alt="company logo" />
             </div>
             <div className="w-full h-full flex flex-col">
                 <div className="w-full flex-1">
                     <ul className='mt-10 w-full pl-8 flex flex-col gap-10 mb-2'>
                         <NavItems
-                            logo='src/assets/images/navbar/layer1.svg'
+                            logo={layer1}
                             name='Reports'
                             location='/dashboard'
                             selected={selectedItem}
@@ -52,7 +55,7 @@ function NavigationMenu() {
                             onClick={() => handleNavigation('/dashboard')}
                         />
                         <NavItems
-                            logo='src/assets/images/navbar/Stock Phones.svg'
+                            logo={stockPhone}
                             name='Stock Phones'
                             location='/StockPhones'
                             selected={selectedItem}

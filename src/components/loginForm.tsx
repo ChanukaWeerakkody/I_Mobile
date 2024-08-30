@@ -5,6 +5,7 @@ import '../index.css';
 import { backend_url } from '../utill/utill';
 import { useNavigate } from "react-router-dom";
 import groupImage from "../../public/assets/images/Group 160.png";
+import logo from "../../public/assets/images/logo.png";
 
 
 
@@ -105,7 +106,7 @@ export default function LoginForm() {
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4 md:p-0">
         <div className="mb-8">
           <img
-            src="../../public/assets/images/logo.png"
+            src={logo}
             alt="logo"
             className="w-32 md:w-[15vw] h-auto object-contain"
           />
