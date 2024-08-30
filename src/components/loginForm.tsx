@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import '../index.css';
 import { backend_url } from '../utill/utill';
 import { useNavigate } from "react-router-dom";
+import {groupImage} from "../assets/images/Group 160.png";
 
 
 
@@ -96,7 +97,7 @@ export default function LoginForm() {
     <div className="flex flex-col md:flex-row h-screen bg-gradient-custom">
       <div className="w-full md:w-1/2 flex justify-center items-center">
         <img
-          src="src/assets/images/Group 160.png"
+          src={groupImage}
           alt="main image"
           className="rounded-right w-full h-full object-cover"
         />

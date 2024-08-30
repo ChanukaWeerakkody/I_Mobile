@@ -1,5 +1,5 @@
 // App.js or App.tsx
-import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import LoginForm from './components/loginForm';
 import Dashboard from './components/dashboard/dashboard.tsx';
 import Home from './components/home';
