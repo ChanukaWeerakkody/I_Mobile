@@ -5,7 +5,7 @@ import axios from "axios";
 import {backend_url} from "../../utill/utill.ts";
 import Swal from "sweetalert2";
 import {jsPDF} from "jspdf";
-import logo from "../../assets/images/logo2.jpg"
+import logo from "../../../public/assets/images/logo2.jpg"
 
 export interface WholesalePhone {
   id: string;

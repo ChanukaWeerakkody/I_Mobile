@@ -38,7 +38,7 @@ function NavigationMenu() {
     return (
         <nav className="fixed top-8 left-0 pt-3 flex flex-col min-w-[270px] w-[270px] h-[95%] bg-[#1D1D27] rounded-r-[40px] items-center overflow-hidden">
             <div className='mt-2 self-start pl-8'>
-                <img width="120px" src="src/assets/images/logo.png" alt="company logo" />
+                <img width="120px" src="../../../../public/assets/images/logo.png" alt="company logo" />
             </div>
             <div className="w-full h-full flex flex-col">
                 <div className="w-full flex-1">
@@ -107,7 +107,7 @@ function NavigationMenu() {
                         to="/order"
                         className="mt-5 flex text-[25px] w-full justify-center rounded-md bg-[#5356EC] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 items-center gap-3"
                     >
-                        <img src="src/assets/images/navbar/cart-svgrepo-com 1.svg" alt="cart" />
+                        <img src="../../../../public/assets/images/navbar/cart-svgrepo-com 1.svg" alt="cart" />
                         Place Order
                     </NavLink>
                 </div>
