@@ -253,13 +253,13 @@ const Item = () => {
     const validateForm = (): boolean => {
         const newErrors: { [key: string]: string } = {};
 
-        if (!category) newErrors.category = 'Category is required';
+        /*if (!category) newErrors.category = 'Category is required';
         if (!name) newErrors.name = 'Name is required';
         if (!brand) newErrors.brand = 'Brand is required';
         if (!colour) newErrors.colour = 'Colour is required';
         if (!price) newErrors.price = 'Price is required';
         if (!warranty_period) newErrors.warranty_period = 'Warranty period is required';
-        if (!qty) newErrors.qty = 'Quantity is required';
+        if (!qty) newErrors.qty = 'Quantity is required';*/
     
         // Validate numeric price
         if (price && isNaN(parseFloat(price))) {
@@ -330,7 +330,7 @@ const Item = () => {
             {/* Buttons for add, delete, update */}
             <div className='m-4 flex justify-between items-end'>
                 <div className='flex flex-col'>
-                        <input className='text-feild' value={qty} onChange={handleInputChange(setQty, 'qty')} placeholder='   qty' />
+                        <input className='text-feild text-white' value={qty} onChange={handleInputChange(setQty, 'qty')} placeholder='   qty' />
                         {errors.qty && <span className='text-red-500 text-xs ml-[0.5vw]'>{errors.qty}</span>}
                     </div>
 
