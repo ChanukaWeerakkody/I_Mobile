@@ -1,0 +1,34 @@
+.buttons-styles{
+    background-color: #111121;
+    text-align: justify;
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: bolder;
+  }
+ 
+  .text-feild {
+    background-color: #181738;
+    border: 1px solid #5356EC; 
+    padding: 3px;
+    width: 25vw;
+    height: 7vh;
+    border-radius: 15px;
+    opacity: 0.5;
+  }
+
+  .bg-green-button{
+    background-color: rgb(1, 142, 1);
+  }
+  .bg-red-button{
+    background-color: red;
+  }
+  .bg-blue-button{
+    background-color: blue;
+  }
+  
+.table-styles {
+  border: 3px solid #5356EC; 
+  background-color: #181738;
+  color: white;
+  border-radius: 20px;
+}

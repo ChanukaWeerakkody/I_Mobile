@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rounded-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.bg-gradient-custom {
+  background: linear-gradient(
+    to bottom,
+    #1E1E1E 0%,
+    #1F2044 100%
+  );
+}
+.input-bg-gradient-custom{
+  background-color: #111121;
+  border: 1px solid #5356EC; 
+  text-align: justify;
+  font-size: 17px;
+}
+
+.buttons-styles{
+  background-color: #111121;
+  text-align: justify;
+  font-size: 17px;
+  color: #ffffff;
+}
+.daily_cost-buttons-styles{
+  background-color: #111121;
+  text-align: justify;
+  font-size: 17px;
+  color: #ffffff;
+  border: 2px solid  #0c12b7;
+}
+
+
+.custom-font-colour{
+  color: #717171;
+  font-weight: bolder;
+}
+.custom-border-colour {
+  border: 2px solid #5356EC; 
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.background-colour-today-sales-div{
+  background-color: #21222D;
+}
+
+.custom-div{
+  margin: 10px;
+  height: 150px;
+  background-color: #171821;
+}

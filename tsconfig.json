@@ -1,0 +1,19 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "target": "es5",                        // Or another target of your choice
+    "module": "commonjs",                   // Or another module system if needed
+    "jsx": "react-jsx",                     // Use "react-jsx" for React 17+ or "react" for older versions
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}
