@@ -11,6 +11,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  base: '/I_Mobile/',
   theme: {
     extend: {},
   },
