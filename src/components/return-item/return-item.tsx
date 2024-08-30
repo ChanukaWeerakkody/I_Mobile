@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TopNavbar from "../topNavbar.tsx";
 import Button from "../crudbuttons/buttons.tsx";
 import axios from "axios";
 import { backend_url } from "../../utill/utill.ts";
 import Swal from "sweetalert2";
-//import Combobox from '../combobox/combobox.tsx';
+import Combobox from '../combobox/combobox.tsx';
 import addButton from '../../../public/assets/icons/Add Btn.svg';
 import updateButton from '../../../public/assets/icons/Update Btn.svg';
 import deleteButton from '../../../public/assets/icons/Delete Btn.svg';
 
-/*const brandOptions = [
+const brandOptions = [
     { value: 'Samsung', label: 'Samsung' },
     { value: 'Apple', label: 'Apple' },
     { value: 'OMS', label: 'OMS' },
-];*/
+];
 
 interface ReturnPhones {
     return_phone_id: number;
@@ -214,7 +214,7 @@ export default function ReturnItem() {
     }
 
     // Modified onChange handlers to update error state dynamically
-    /*const handleCategoryChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    const handleCategoryChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
         setCategory(ev.target.value);
         if (ev.target.value.trim() !== '') {
             setErrors(prev => ({ ...prev, category: '' }));
@@ -247,20 +247,7 @@ export default function ReturnItem() {
             setErrors(prev => ({ ...prev, brand: '' }));
         }
     };
-*/
-    type ErrorFields = 'category' | 'name' | 'brand' | 'reason' | 'contact_number';
 
-    const handleInputChange = (
-        setter: React.Dispatch<React.SetStateAction<string>>,
-        field: ErrorFields,
-    ) => (ev: React.ChangeEvent<HTMLInputElement>) => {
-        setter(ev.target.value);
-        if (errors[field]) {
-            const newErrors = { ...errors };
-            delete newErrors[field];
-            setErrors(newErrors);
-        }
-    };
     
     return (
         <div className='m-4 w-full'>
@@ -269,7 +256,7 @@ export default function ReturnItem() {
             </div>
 
             {/* inputs */}
-            {/*<div className='m-4 text-white font-semibold'>
+            <div className='m-4 text-white font-semibold'>
                 <div className='mt-5 flex flex-col sm:flex-row justify-between '>
                     <div className='flex flex-col'>
                         <input
@@ -321,64 +308,7 @@ export default function ReturnItem() {
                         {errors.contact_number && <span className='text-red-500 ml-[1vw] text-xs'>{errors.contact_number}</span>}
                     </div>
                 </div>
-            </div>*/}
-            {/* Inputs row */}
-            <div className='m-4 text-white font-semibold'>
-                <div className='mt-5 flex flex-col sm:flex-row justify-between'>
-                    <div className='flex flex-col'>
-                        <input
-                            className={`text-feild mb-1 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1 ${errors.category ? 'border-red-500' : ''}`}
-                            value={category}
-                            onChange={handleInputChange(setCategory, 'category')}
-                            placeholder='   Category'
-                        />
-                        {errors.category && <span className='text-red-500 text-xs ml-[0.5vw]'>{errors.category}</span>}
-                    </div>
-                    <div className='flex flex-col'>
-                        <input
-                            className={`text-feild mb-1 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1 ${errors.name ? 'border-red-500' : ''}`}
-                            value={name}
-                            onChange={handleInputChange(setName, 'name')}
-                            placeholder='   Name'
-                        />
-                        {errors.name && <span className='text-red-500 text-xs ml-[0.5vw]'>{errors.name}</span>}
-                    </div>
-                    <div className='flex flex-col'>
-                        <input
-                            className={`text-feild mb-1 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1 ${errors.brand ? 'border-red-500' : ''}`}
-                            value={brand}
-                            onChange={handleInputChange(setBrand, 'brand')}
-                            placeholder='   Brand'
-                        />
-                        {errors.brand && <span className='text-red-500 text-xs ml-[0.5vw]'>{errors.brand}</span>}
-                    </div>
-                </div>
             </div>
-
-            {/* Second row of inputs */}
-            <div className='m-4 text-white font-semibold'>
-                <div className='mt-5 flex flex-col sm:flex-row justify-between'>
-                    <div className='flex flex-col'>
-                        <input
-                            className={`text-feild mb-1 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1 ${errors.reason ? 'border-red-500' : ''}`}
-                            value={reason}
-                            onChange={handleInputChange(setReason, 'reason')}
-                            placeholder='   Reason'
-                        />
-                        {errors.reason && <span className='text-red-500 text-xs ml-[0.5vw]'>{errors.reason}</span>}
-                    </div>
-                    <div className='flex flex-col'>
-                        <input
-                            className={`text-feild mb-1 md:mb-0 md:w-[30%] lg:mx-2 md:mx-2 sm:mx-1 ${errors.contact_number ? 'border-red-500' : ''}`}
-                            value={contact_number}
-                            onChange={handleInputChange(setContact_number, 'contact_number')}
-                            placeholder='   Contact Number'
-                        />
-                        {errors.contact_number && <span className='text-red-500 text-xs ml-[0.5vw]'>{errors.contact_number}</span>}
-                    </div>
-                </div>
-            </div>
-
 
 
             {/* buttons */}

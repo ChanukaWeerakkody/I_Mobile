@@ -3,6 +3,8 @@ import TopNavbar from '../topNavbar';
 import axios from 'axios';
 import { backend_url } from '../../utill/utill';
 import Swal from 'sweetalert2';
+import addButton from '../../../public/assets/icons/Add Btn.svg';
+import deleteButton from '../../../public/assets/icons/Delete Btn.svg';
 
 interface expenccessDetails {
     amount: number,
@@ -159,9 +161,9 @@ export default function Expencess() {
         {/* add buttons */}
         <div className='mt-[5vh] flex justify-end space-x-10'>
             <button onClick={handleAddExpencessOnClick} className='buttons-styles bg-green-button w-[7vw] h-[5vh] text-center rounded-xl flex justify-center items-center'>
-                <img src={'src/assets/icons/Add Btn.svg'} alt='add icon' />ADD</button>
+                <img src={addButton} alt='add icon' />ADD</button>
             <button onClick={handleDeleteExpencessOnClick} className='buttons-styles bg-red-button w-[8vw] h-[5vh] text-center rounded-xl flex justify-center items-center'>
-                <img src={'src/assets/icons/Delete Btn.svg'} alt='delete icon' />DELETE</button>
+                <img src={deleteButton} alt='delete icon' />DELETE</button>
         </div>
 
         {/* table */}
